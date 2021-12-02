@@ -9,7 +9,10 @@ function Carousel(props) {
   const [cardIdx, setCardIdx] = useState(0);
   const card = props.cardData[cardIdx];
   const total = props.cardData.length;
+  const leftIconHidden = cardIdx === 0 ? "hidden" : "";
+  const rightIconHidden = cardIdx === total - 1 ? "hidden" : "";
   const goForward = () => setCardIdx(cardIdx + 1);
+  const goBack = () => setCardIdx(cardIdx - 1);
 
   return (
     <div className="Carousel">
